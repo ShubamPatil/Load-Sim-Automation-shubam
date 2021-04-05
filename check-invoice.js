@@ -21,12 +21,10 @@ module.exports.checkInvoiceGenerated = function (startDatetime, endDatetime, tra
                         });
                         console.log(`${todaysSession.length} of them are for Testcharge001`);
                         const ActTransID = todaysSession[0].TransactionID;
+                        const ActTID = ActTransID.toString();
 
-                        console.log(transID);
-                        console.log(`Recent Transaction ID : ${ActTransID}`);
-                        expect(ActTransID).to.be.equal(transID);
-                        
-                        //spawn('bash', ['stop-simulator.sh']);
+                        console.log(`Recent Transaction ID : ${ActTID}`);
+                        expect(ActTID).to.be.equal(transID);
                         done();
                     })
             // }, 100000);
